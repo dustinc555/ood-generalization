@@ -325,9 +325,9 @@ class CXRBase():
     cxr_augment: {0, 1}
     use_cache: {0, 1}
     '''
-    ENVIRONMENTS = ['MIMIC', 'CXP', 'NIH', 'PAD']
+    ENVIRONMENTS = ['CXP', 'NIH']
     MAX_STEPS = 20000
-    N_WORKERS = 2
+    N_WORKERS = 0
     CHECKPOINT_FREQ = 100
     ES_METRIC = 'f1'
     input_shape = None
@@ -344,6 +344,7 @@ class CXRBase():
         # loads data with random splits
         self.dfs = {}
         all_dfs = []
+        print(cxrConstants.df_paths)
         for data_env in cxrConstants.df_paths:
             func = cxrProcess.get_process_func(data_env)
             df_env = func(pd.read_csv(cxrConstants.df_paths[data_env]), only_frontal = True)

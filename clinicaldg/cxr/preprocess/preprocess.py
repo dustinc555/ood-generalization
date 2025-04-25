@@ -76,6 +76,8 @@ def preprocess_cxp():
     else:
         raise ValueError("CheXpert files not found!")
 
+    print('Printing to: ')
+    print(out_folder/"preprocessed.csv")
     out_folder.mkdir(parents = True, exist_ok = True)  
 
     df['subject_id'] = df['Path'].apply(lambda x: int(Path(x).parent.parent.name[7:]))
@@ -98,11 +100,11 @@ def preprocess_nih():
 if __name__ == '__main__':
     print("Validating paths...")
     validate_all()
-    print("Preprocessing MIMIC-CXR...")
-    preprocess_mimic()
+    # print("Preprocessing MIMIC-CXR...")
+    # preprocess_mimic()
     print("Preprocessing CheXpert...")
     preprocess_cxp()
     print("Preprocessing ChestX-ray8...")
     preprocess_nih()
-    print("Preprocessing PadChest... This might take a few minutes...")
-    preprocess_pad()
+    # print("Preprocessing PadChest... This might take a few minutes...")
+    # preprocess_pad()

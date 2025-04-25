@@ -2,20 +2,16 @@ import os
 
 #-------------------------------------------
 image_paths = {
-    'MIMIC': '/mimic-cxr', # MIMIC-CXR
-    'CXP': '/CheXpert-v1.0', # CheXpert
-    'NIH': '/chestxray8', # ChestX-ray8
-    'PAD': '/padchest', # PadChest
+    'NIH': '/workspace/data/ChestX-ray8', # ChestX-ray8
+    'CXP': '/workspace/data/CheXpert', # CheXpert
 }
 
 meta_paths = {
-    'MIMIC': '/scratch/rc4499/thesis/data/mimic-cxr', # MIMIC-CXR
-    'CXP': '/scratch/rc4499/thesis/data/chexpert', # CheXpert
-    'NIH': '/scratch/rc4499/thesis/data/chestxray8', # ChestX-ray8
-    'PAD': '/scratch/rc4499/thesis/data/padchest', # PadChest
+    'NIH': '/workspace/data/ChestX-ray8', # ChestX-ray8
+    'CXP': '/workspace/data/CheXpert', # CheXpert
 }
 
-cache_dir = '/scratch/rc4499/thesis/cache'
+cache_dir = '/scratch/cache'
 
 #-------------------------------------------
 

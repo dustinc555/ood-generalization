@@ -15,6 +15,8 @@ def validate_cxp():
         cxp_subfolder = 'CheXpert-v1.0'
     else:
         cxp_subfolder = 'CheXpert-v1.0-small'
+        
+    print(img_dir/cxp_subfolder/'train.csv')
     assert (img_dir/cxp_subfolder/'train.csv').is_file()
     assert (img_dir/cxp_subfolder/'train/patient48822/study1/view1_frontal.jpg').is_file()
     assert (img_dir/cxp_subfolder/'valid/patient64636/study1/view1_frontal.jpg').is_file()
@@ -38,7 +40,7 @@ def validate_splits():
 
 
 def validate_all():
-    validate_mimic()
+    # validate_mimic()
     validate_cxp()
     validate_nih()
-    validate_pad()
+    # validate_pad()
